@@ -1,0 +1,885 @@
+who
+==========================================
+1=personal chat
+2=group chat
+3=message delivered
+4=join a group
+5=leave a group
+
+messahe_type
+==========================================
+1=text message
+2=image message
+3=video message
+4=location share
+5=sticker
+6=contact
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+userregister.php
+=========================
+perameters
+------------------------
+code            (country code)
+mobile          (mobile number)
+email           (email)
+regid           (device token) optional
+device_type     (0= android, 1= iphone)
+
+response
+-----------------------------------------------------------
+1st register
+{
+    "success": true,
+    "pre_register": false,
+    "old_email": "info@techxenon.com",
+    "message": "Register Successfully"
+}
+2nd register
+{
+    "success": true,
+    "pre_register": true,
+    "old_email": "info@techxenon.com",
+    "message": "Code Send Successfully to info@techxenon.com please check it."
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+veryfiedcode.php
+=========================
+perameters
+------------------------
+email           (user email)
+promo_code      (verify code)
+regid           (device token)
+
+response
+-----------------------------------------------------------
+{
+    "success": true,
+    "message": "Promo Code valid",
+    "user_id": "69",
+    "fname": "",
+    "phonecode": "+91",
+    "phone": "9998106007",
+    "pic": "",
+    "email": "info@techxenon.com",
+    "online": "0",
+    "status": "Yes i am using Gonechat.",
+    "last_seen": "0000-00-00 00:00:00"
+}
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+edit_profile.php
+=========================
+perameters
+------------------------
+id          fixed
+name        optional
+status      optional
+regid       optional
+image       optional
+code        optional    (code and mobile number must required with each other)
+mobile      optional    (code and mobile number must required with each other)
+
+response
+-----------------------------------------------------------
+if previous data and new data are different with each other
+{
+    "details": {
+        "id": "77",
+        "name": "Deep",
+        "online": "1",
+        "status": "Hi i am deep",
+        "image": "users/1.40066621935E+12deep.jpg",
+        "phone": "9429502121",
+        "phone_code": "+93"
+    },
+    "success": true,
+    "message": "Success."
+}
+
+if previous data and new data are not different with each other
+{
+    "details":{
+        "id": "1",
+        "name": "Devraj",
+        "online": "1",
+        "status": "parmar",
+        "image": "Omkar_Desai1396700826027.jpg",
+        "phone": "9638180205",
+        "phone_code": "91"
+    },
+    "success": false,
+    "message": "Error changing details."
+}
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+friendalllist.php
+=========================
+perameters
+------------------------
+id          fixed your id
+num         (coma separated number LIKE "9998106007,9409383861") 
+
+response
+-----------------------------------------------------------
+if result found
+{
+    "details": [
+        {
+            "id": "70",
+            "name": "",
+            "online": "0",
+            "status": "Yes i am using Gonechat.",
+            "image": "default.jpg",
+            "phone": "9998106007",
+            "phone_code": "+91",
+            "email": "info@techxenon.com",
+            "last_seen": "0000-00-00 00:00:00"
+        },
+        {
+            "id": "71",
+            "name": "pappu",
+            "online": "1",
+            "status": "hi...!",
+            "image": "default.jpg",
+            "phone": "9409383861",
+            "phone_code": "+91",
+            "email": "abc@xyz.com",
+            "last_seen": "2014-05-22 00:00:00"
+        }
+    ],
+    "success": true,
+    "message": "Friend list updated."
+}
+if no user found
+{
+    "details": [],
+    "success": false,
+    "message": "No User Found."
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+getstickerlist.php
+=========================
+perameters
+------------------------
+id          fixed your id
+
+response
+-----------------------------------------------------------
+if result found
+{
+    "details": [
+        {
+            "id": "1",
+            "image": "s6",
+            "ext": ".jpg",
+            "category": "main"
+        },
+        {
+            "id": "2",
+            "image": "s8",
+            "ext": ".jpg",
+            "category": "main"
+        },
+        {
+            "id": "3",
+            "image": "s9",
+            "ext": ".jpg",
+            "category": "main"
+        },
+        {
+            "id": "4",
+            "image": "s7",
+            "ext": ".jpg",
+            "category": "main"
+        },
+        {
+            "id": "5",
+            "image": "s10",
+            "ext": ".jpg",
+            "category": ""
+        },
+        {
+            "id": "6",
+            "image": "s11",
+            "ext": ".jpg",
+            "category": ""
+        },
+        {
+            "id": "7",
+            "image": "s12",
+            "ext": ".jpg",
+            "category": ""
+        },
+        {
+            "id": "8",
+            "image": "s13",
+            "ext": ".jpg",
+            "category": ""
+        }
+    ],
+    "success": true,
+    "message": "Fetched the sticker list."
+}
+
+sticker url is "images/sticker/sticker_name.extension"
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+last_seen_set.php
+=========================
+perameters
+------------------------
+id          fixed your id
+status      0 for offline 1 for online
+
+response
+-----------------------------------------------------------
+{
+    "success": true,
+    "message": "Status Changed."
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+last_seen_get.php
+=========================
+perameters
+------------------------
+id          fixed friend id
+
+response
+-----------------------------------------------------------
+if user is online
+{
+    "last_seen": "Online",
+    "success": true,
+    "message": "Last seen fetched."
+}
+if user is offline and last seen before 24 hours.
+{
+    "last_seen": "last seen today at 3:44 pm",
+    "success": true,
+    "message": "Last seen fetched."
+}
+if user is offline and last seen after 24 hours and before 48 hours.
+{
+    "last_seen": "last seen yesterday at 3:44 pm",
+    "success": true,
+    "message": "Last seen fetched."
+}
+if user is offline and last seen day before yesterday.
+{
+    "last_seen": "last seen 20/05  at 3:44 pm",
+    "success": true,
+    "message": "Last seen fetched."
+}
+you just need to display "last_seen" what ever it is.
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+status_change.php
+=========================
+perameters
+------------------------
+id          fixed your id
+status      new user status display to friends.
+
+response
+-----------------------------------------------------------
+if status successfully updated
+{
+    "details": {
+        "id": "70",
+        "name": "",
+        "online": "0",
+        "status": "pappu pass ho gaya...! :)",
+        "image": "default.jpg",
+        "phone": "9998106007",
+        "phone_code": "+91",
+        "email": "info@techxenon.com",
+        "last_seen": "2014-05-20 15:44:39"
+    },
+    "success": true,
+    "message": "Status Changed."
+}
+if status set as blank
+{
+    "details": {
+        "id": "70",
+        "name": "",
+        "online": "0",
+        "status": "pappu pass ho gaya...! :)",
+        "image": "default.jpg",
+        "phone": "9998106007",
+        "phone_code": "+91",
+        "email": "info@techxenon.com",
+        "last_seen": "2014-05-20 15:44:39"
+    },
+    "success": false,
+    "message": "Sorry you set a status as blank."
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+message.php
+=========================
+perameters
+------------------------
+id          your id
+friend_id   receiver id
+message     
+type        1=text,2=image,3=video,4=location,5=sticker,6=contact
+temp_msg_id
+
+response
+-----------------------------------------------------------
+sender side response
+{
+    "details": {
+        "id": "704",
+        "time": "2014-05-24 14:55:17",
+        "type": "1",
+        "user_id": "71",
+        "friend_id": "70",
+        "who": "1",
+        "message": "hello",
+        "delivery_time": "0000-00-00 00:00:00",
+        "image": "default.jpg",
+        "user_status": "hi...!",
+        "phone": "9409383861",
+        "phone_code": "+91",
+        "name": "pappu",
+        "status": "1"
+    },
+    "message": "Stored message for sending.",
+    "success": true
+}
+
+iphone push side response
+{
+    "aps":{
+        "alert":"9998106007 : hello",
+        "name":"9998106007",
+        "image":"default.jpg",                              sender image
+        "user_status":"1",
+        "phone":"9998106007",
+        "phone_code":"+91",
+        "id":"689",
+        "time":"2014-05-23 10:43:52",
+        "type":"1",
+        "user_id":"70",
+        "friend_id":"71",
+        "who":"1",
+        "message":"hello",
+        "status":"1",
+        "delivery_time":"0000-00-00 00:00:00",
+        "badge":1,
+        "sound":"default"
+    }
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+create_group.php
+=========================
+perameters
+------------------------
+id          your id
+name        group name
+image       base 64 image only
+membe_ids   LIKE(70,65,75)
+
+response
+-----------------------------------------------------------
+sender side response if user over limit
+{
+    "details": {
+        "id": "65",
+        "name": "Pappus group",
+        "time": "2014-05-23 17:29:14",
+        "admin_id": "71",
+        "image": "group/default.jpg"
+    },
+    "success": true,
+    "message": "Sorry, because of user limit users are not added."
+}
+sender side response if user under limit
+{
+    "details": {
+        "id": "66",
+        "name": "Pappus group",
+        "time": "2014-05-23 17:30:06",
+        "admin_id": "71",
+        "image": "group/default.jpg"
+    },
+    "success": true,
+    "message": "Group Created."
+}
+
+iphone push side response
+{
+    "aps":{
+        "alert":"Now you are a member of XYZ group",
+        "name":"XYZ",                                   group name
+        "image":"group/default.jpg",                    group image
+        "user_status":"",
+        "phone":"",
+        "phone_code":"",
+        "id":"60",                                      group id
+        "time":"2014-05-23 10:43:52",                   group creation time
+        "type":"",
+        "user_id":"70",                                 group admin id
+        "friend_id":"",
+        "who":"",
+        "message":"",
+        "status":"",
+        "delivery_time":"",
+        "badge":1,
+        "sound":"default"
+    }
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+edit_group_profile.php
+=========================
+perameters
+------------------------
+id          fixed
+name        optional
+image       optional
+
+response
+-----------------------------------------------------------
+if previous data and new data are different with each other
+{
+    "details": {
+        "id": "61",
+        "name": "Raam",
+        "admin_id": "71",
+        "image": "group/1400841435538ramu.jpg",
+        "time": "2014-05-23 16:02:23"
+    },
+    "success": true,
+    "message": "Success."
+}
+
+if previous data and new data are not different with each other
+{
+    "details": {
+        "id": "61",
+        "name": "Raam",
+        "admin_id": "71",
+        "image": "group/1400841435538ramu.jpg",
+        "time": "2014-05-23 16:02:23"
+    },
+    "success": false,
+    "message": "Error changing details."
+}
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+join_unjoin_group.php
+=========================
+perameters
+------------------------
+id          group id
+type        0= delete, 1 =add
+membe_ids   id of users
+
+response
+-----------------------------------------------------------
+when type = 0
+---------------
+if last user also un join the group
+{
+    "success": false,
+    "message": "Group is deleted."
+}
+when any user un join a group
+{
+    "success": true,
+    "message": "Left group successfully done."
+}
+when type = 1
+---------------
+when user successfully added
+{
+    "details": {
+        "id": "72",
+        "time": "2014-05-24 15:05:03",
+        "type": "",
+        "user_id": "71",
+        "friend_id": "",
+        "who": "4",
+        "message": "",
+        "delivery_time": "",
+        "image": "group/default.jpg",
+        "user_status": "",
+        "phone": "",
+        "phone_code": "",
+        "name": "Pappus group",
+        "status": ""
+    },
+    "success": true,
+    "message": "User successfully added."
+}
+if user already a member of a group
+{
+    "success": false,
+    "message": "User already available in group."
+}
+if user unregistered from application or user not found in application
+{
+    "success": false,
+    "message": "User already unregistered."
+}
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+join_unjoin_group_2.php
+=========================
+perameters
+------------------------
+id          group id
+membe_ids   id of users
+
+response
+-----------------------------------------------------------
+if last user also un join the group
+{
+    "success": false,
+    "message": "Group is deleted."
+}
+when any user available and then he will left the group
+{
+    "success": true,
+    "message": "Left group successfully done."
+}
+when any user not available and then he will be added in the group
+{
+    "details": {
+        "id": "72",
+        "time": "2014-05-24 15:05:03",
+        "type": "",
+        "user_id": "71",
+        "friend_id": "",
+        "who": "4",
+        "message": "",
+        "delivery_time": "",
+        "image": "group/default.jpg",
+        "user_status": "",
+        "phone": "",
+        "phone_code": "",
+        "name": "Pappus group",
+        "status": ""
+    },
+    "success": true,
+    "message": "User successfully added."
+}
+if user already a member of a group
+{
+    "success": false,
+    "message": "User already available in group."
+}
+if user unregistered from application or user not found in application
+{
+    "success": false,
+    "message": "User already unregistered."
+}
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+group_member.php
+=========================
+perameters
+------------------------
+id          group id
+
+response
+-----------------------------------------------------------
+if user list available
+{
+    "details": [
+        {
+            "group_id": "75",
+            "id": "71",
+            "is_admin": "1",
+            "name": "pappu",
+            "phone_code": "+91",
+            "phone": "9409383861",
+            "image": "default.jpg",
+            "status": "hi...!"
+        },
+        {
+            "group_id": "75",
+            "id": "1",
+            "is_admin": "0",
+            "name": "",
+            "phone_code": "+91",
+            "phone": "9998106007",
+            "image": "",
+            "status": "Yes i am using Freshim."
+        }
+    ],
+    "success": true,
+    "message": "Member list successfully sent."
+}
+if no any user found then all users are deleted from that group and that group was also deleted.s
+{
+    "success": false,
+    "message": "Sorry, Group not found."
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+grouplist.php
+=========================
+perameters
+------------------------
+id          user id
+
+response
+-----------------------------------------------------------
+if groups found
+{
+    "details": [
+        {
+            "id": "76",
+            "name": "Pappus",
+            "admin_id": "71",
+            "image": "group/default.jpg",
+            "time": "2014-05-24 16:53:20",
+            "group_members": [
+                {
+                    "id": "71",
+                    "name": "pappu",
+                    "phone_code": "+91",
+                    "phone": "9409383861",
+                    "image": "default.jpg",
+                    "status": "hi...!"
+                },
+                {
+                    "id": "1",
+                    "name": "",
+                    "phone_code": "+91",
+                    "phone": "9998106007",
+                    "image": "",
+                    "status": "Yes i am using Freshim."
+                }
+            ]
+        },
+        {
+            "id": "75",
+            "name": "Pappus group",
+            "admin_id": "71",
+            "image": "group/default.jpg",
+            "time": "2014-05-24 16:52:07",
+            "group_members": [
+                {
+                    "id": "1",
+                    "name": "",
+                    "phone_code": "+91",
+                    "phone": "9998106007",
+                    "image": "",
+                    "status": "Yes i am using Freshim."
+                },
+                {
+                    "id": "71",
+                    "name": "pappu",
+                    "phone_code": "+91",
+                    "phone": "9409383861",
+                    "image": "default.jpg",
+                    "status": "hi...!"
+                }
+            ]
+        }
+    ],
+    "success": true,
+    "message": "Groups Updated Successfully."
+}
+when you are not a member of any groups.
+{
+    "details": [],
+    "success": false,
+    "message": "You are not a member of any group."
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+message_group.php
+=========================
+perameters
+------------------------
+id          your id
+friend_id   group id
+message     
+type        1=text,2=image,3=video,4=location,5=sticker,6=contact
+temp_msg_id
+
+response
+-----------------------------------------------------------
+sender side response
+{
+    "details": {
+        "id": "721",
+        "time": "2014-05-26 11:44:41",
+        "type": "1",
+        "user_id": "71",
+        "friend_id": "78",
+        "who": "2",
+        "message": "hello",
+        "delivery_time": "0000-00-00 00:00:00",
+        "image": "default.jpg",
+        "user_status": "hi...!",
+        "phone": "9409383861",
+        "phone_code": "+91",
+        "name": "pappu",
+        "group_name": "Pappus Jappu",
+        "status": "0"
+    },
+    "success": true,
+    "message": "Successfully stored message for sending."
+}
+
+iphone push side response
+{
+    "aps":{
+        "alert":"Pappus Jappu@pappu : hello",
+        "name":"pappu",
+        "image":"default.jpg",
+        "user_status":"hi...!",
+        "phone":"9409383861",
+        "phone_code":"+91",
+        "id":"722",
+        "time":"2014-05-26 11:45:29",
+        "type":"1",
+        "user_id":"71",
+        "friend_id":"78",
+        "who":"2",
+        "message":"hello",
+        "status":"",
+        "delivery_time":"0000-00-00 00:00:00",
+        "badge":1,
+        "sound":"default"
+    }
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+get_new_messages.php
+=========================
+perameters
+------------------------
+id          your id
+message_id   last message id
+
+response
+-----------------------------------------------------------
+if any records found
+{
+    "details": [
+        {
+            "id": "687",
+            "user_id": "70",
+            "friend_id": "71",
+            "type": "1",
+            "message": "hi",
+            "who": "1",
+            "time": "2014-05-23 10:36:29",
+            "status": "1",
+            "delivery_time": "0000-00-00 00:00:00",
+            "name": "",
+            "image": "",
+            "user_status": "",
+            "phone": "",
+            "phone_code": ""
+        },
+        {
+            "id": "688",
+            "user_id": "70",
+            "friend_id": "71",
+            "type": "1",
+            "message": "hi",
+            "who": "1",
+            "time": "2014-05-23 10:41:37",
+            "status": "1",
+            "delivery_time": "0000-00-00 00:00:00",
+            "name": "",
+            "image": "",
+            "user_status": "",
+            "phone": "",
+            "phone_code": ""
+        }
+    ],
+    "success": true,
+    "message": "Messages were received successfully."
+}
+if no new messages found
+{
+    "success": false,
+    "message": "No new messages found."
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+un_register.php
+=========================
+perameters
+------------------------
+id          your id
+
+response
+-----------------------------------------------------------
+when user successfully deleted.
+{
+    "success": true,
+    "message": "User successfully deleted."
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+message_delivery.php
+=========================
+perameters
+------------------------
+message_id    message id
+
+response
+-----------------------------------------------------------
+when user successfully deleted.
+{
+    "details": [
+        {
+            "id": "754",
+            "time": "2014-06-04 14:34:30",
+            "type": "1",
+            "user_id": "69",
+            "friend_id": "78",
+            "who": 3,
+            "message": "Message Delivered",
+            "status": "2",
+            "delivery_time": "2014-06-04 14:41:49"
+        }
+    ],
+    "success": true,
+    "message": "Successfully update delivery status."
+}
+ihone push
+{
+    "aps":{
+        "alert":"Your message was delivered",
+        "name":"",
+        "image":"",
+        "user_status":"",
+        "phone":"",
+        "phone_code":"",
+        "id":"756",
+        "time":"2014-06-04 14:53:11",
+        "type":"1",
+        "user_id":"69",
+        "friend_id":"78",
+        "who":"3",
+        "message":"Message Delivered",
+        "status":"2",
+        "delivery_time":"2014-06-04 14:53:18",
+        "badge":1,
+        "sound":"default"
+    }
+}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&

@@ -1,0 +1,36 @@
+<resources>
+
+   <style name="Theme.Gonechat_actionbar" parent="@style/Theme.Sherlock.Light">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_gonechat_actionbar</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Gonechat_actionbar</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Gonechat_actionbar</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Gonechat_actionbar</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Gonechat_actionbar</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Gonechat_actionbar</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_gonechat_actionbar</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_gonechat_actionbar</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Gonechat_actionbar</item>
+        
+        
+    </style>
+
+    <style name="ActionBar.Solid.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_solid_gonechat_actionbar</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_gonechat_actionbar</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_gonechat_actionbar</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Gonechat_actionbar</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_gonechat_actionbar</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Gonechat_actionbar</item>
+    </style>
+    
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Gonechat_actionbar.Widget" parent="@style/Theme.Sherlock">
+        <item name="android:popupMenuStyle">@style/PopupMenu.Gonechat_actionbar</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Gonechat_actionbar</item>
+    </style>
+
+
+</resources>

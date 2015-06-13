@@ -1,0 +1,118 @@
+<resources>
+
+
+ <style name="Theme.Gonechat_actionbar" parent="@style/Theme.Sherlock.Light">
+        <item name="actionBarItemBackground">@drawable/selectable_background_gonechat_actionbar</item>
+        <item name="popupMenuStyle">@style/PopupMenu.Gonechat_actionbar</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Gonechat_actionbar</item>
+        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Gonechat_actionbar</item>
+        <item name="actionDropDownStyle">@style/DropDownNav.Gonechat_actionbar</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Gonechat_actionbar</item>
+        <item name="actionModeBackground">@drawable/cab_background_top_gonechat_actionbar</item>
+        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_gonechat_actionbar</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Gonechat_actionbar</item>
+
+        
+    </style>
+
+    <style name="ActionBar.Solid.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.ActionBar.Solid">
+        <item name="background">@drawable/ab_solid_gonechat_actionbar</item>
+        <item name="backgroundStacked">@drawable/ab_stacked_solid_gonechat_actionbar</item>
+        <item name="backgroundSplit">@drawable/ab_bottom_solid_gonechat_actionbar</item>
+        <item name="progressBarStyle">@style/ProgressBar.Gonechat_actionbar</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.ActionBar">
+        <item name="background">@drawable/ab_transparent_gonechat_actionbar</item>
+        <item name="progressBarStyle">@style/ProgressBar.Gonechat_actionbar</item>
+    </style>
+	
+    <style name="PopupMenu.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.ListPopupWindow">	
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_gonechat_actionbar</item>	
+    </style>
+	
+    <style name="DropDownListView.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_gonechat_actionbar</item>
+    </style>
+
+    <style name="ActionBarTabStyle.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_gonechat_actionbar</item>
+    </style>
+	
+    <style name="DropDownNav.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.Spinner.DropDown.ActionBar">
+        <item name="android:background">@drawable/spinner_background_ab_gonechat_actionbar</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_gonechat_actionbar</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_gonechat_actionbar</item>
+    </style>
+    
+    <style name="ProgressBar.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_gonechat_actionbar</item>
+    </style>
+    
+    <style name="ActionButton.CloseMode.Gonechat_actionbar" parent="@style/Widget.Sherlock.Light.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_gonechat_actionbar</item>
+    </style>
+    
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Gonechat_actionbar.Widget" parent="@style/Theme.Sherlock">
+        <item name="popupMenuStyle">@style/PopupMenu.Gonechat_actionbar</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Gonechat_actionbar</item>
+    </style>
+
+
+
+    
+    
+   <!--  
+    <style name="AppBaseTheme" parent="Theme.App">
+       
+    </style>
+
+   
+    <style name="AppTheme" parent="AppBaseTheme">
+        
+    </style>-->
+
+    <style name="title_text_style" parent="android:Widget.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textColor">@color/white</item>
+    </style> 
+
+    <style name="title_bg">
+        <item name="android:background">@color/light_green</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style> 
+
+    <style name="editext_register_style" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/edit_bar_bg_register_big</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+    <style name="tv_chat_menu_style" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textColor">@color/light_green</item>
+    </style>
+
+   <!--  <style name="Theme.App" parent="Theme.Sherlock.Light">
+        <item name="actionBarStyle">@style/Theme.App.ActionBar</item>
+    </style> -->
+
+    <!-- <style name="Theme.App.ActionBar" parent="Widget.Sherlock.ActionBar">
+        <item name="displayOptions">showHome|useLogo</item>
+    </style> -->
+
+    <!-- <style name="Theme_Dialog" parent="android:Theme.Light">
+     <item name="android:windowNoTitle">true</item>
+     <item name="android:windowBackground">@android:color/transparent</item>
+</style> -->
+    
+    
+</resources>

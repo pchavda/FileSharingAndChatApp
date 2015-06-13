@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_loadImgL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/listview_shape"
+        android:shadowColor="#A8A8A8"
+		android:shadowDx="10"
+		android:shadowDy="10"
+		android:shadowRadius="2"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" >
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/tmImage1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:scaleType="fitXY"
+    				android:adjustViewBounds="true"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="top"
+                    android:background="#66ffffff"
+                    android:orientation="horizontal"
+                    android:padding="0dp" >
+                    
+                    <ImageView
+                        android:id="@+id/iv_profilpic_msg"
+                        android:layout_width="50sp"
+                        android:layout_height="50sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="0dp"
+                        android:src="@drawable/user_old" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_profilpic_msg"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/txtUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtUserPhoNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:paddingTop="5dp"
+                            android:text="name2" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtFramDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/textView1"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="5dp"
+                        android:text="date" />
+                </RelativeLayout>
+            </FrameLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll_loadMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/listview_shape"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+                    
+						<ImageView
+						    android:id="@+id/mimageView1"
+						    android:layout_width="50sp"
+						    android:layout_height="50sp"
+						    android:layout_alignParentLeft="true"
+						    android:layout_centerVertical="true"
+						    android:paddingLeft="5dp"
+						    android:src="@drawable/user_old" />
+ 						
+ 						<LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/mimageView1"
+                        android:layout_weight=".85"
+                        android:orientation="vertical" >
+                    
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/mtxtUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="name"
+                            android:gravity="left"
+                            android:padding="5dp"
+                            android:layout_weight="0.5"
+                            android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/mtxtFramDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"         
+                        android:layout_weight="0.5"               
+                        android:gravity="right"
+                         android:padding="5dp"
+                        android:text="date" />
+               </LinearLayout>
+         <TextView
+            android:id="@+id/txtPostdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:paddingBottom="5dp"
+            android:text="Hi"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="@android:color/black" />
+        
+    </LinearLayout>
+</LinearLayout>
+   
+    
+    
+</LinearLayout>

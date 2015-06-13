@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+   
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+        
+        
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            
+            
+            
+            <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       
+        android:layout_marginTop="5dp" >
+        
+         
+                
+            <ImageView
+	        android:id="@+id/imageView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	       android:scaleType="fitXY"
+	        android:src="@drawable/ic_tning"/>
+            
+             
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:background="#33cccccc"
+                   
+                    android:orientation="horizontal"
+                    android:padding="0dp" >
+                    
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imageView1"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/txtUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtUserPhoNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:paddingTop="5dp"
+                            android:text="name2" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ImgFramDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/textView1"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/user_old"/>
+            
+         
+         </RelativeLayout>
+            
+            </FrameLayout>
+            
+        </RelativeLayout>
+        
+        <ListView 
+            android:id="@+id/lv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+          
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="5dp"
+     
+            >
+            
+             
+        </ListView>
+        
+        
+        
+    </LinearLayout>
+    
+
+</ScrollView>

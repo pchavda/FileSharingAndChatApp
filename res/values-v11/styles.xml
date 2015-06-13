@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light"></style>
+
+    <style name="Theme.App" parent="Theme.Sherlock.Light">
+        <item name="android:actionBarStyle">@style/Theme.App.ActionBar</item>
+        <item name="actionBarStyle">@style/Theme.App.ActionBar</item>
+    </style>
+
+    <style name="Theme.App.ActionBar" parent="Widget.Sherlock.ActionBar">
+        <item name="android:displayOptions">showHome|useLogo</item>
+        <item name="displayOptions">showHome|useLogo</item>
+    </style>
+
+</resources>

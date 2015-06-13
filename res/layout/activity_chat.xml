@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parant_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/chat_and_emos_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/add_group_grey"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/iv_attachments_chat_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/button_attachments" />
+
+        <ImageView
+            android:id="@+id/iv_custom_stickers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/button_attachments"
+            android:visibility="gone" />
+        <!-- android:layout_width="0dp" -->
+        <!-- android:layout_height="wrap_content" -->
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_bar_bg" />
+
+        <ImageView
+            android:id="@+id/iv_send_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@android:drawable/ic_menu_send" />
+        
+        <ImageView
+            android:id="@+id/iv_send_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/audio_icon_black" />
+    </LinearLayout>
+    <com.hb.views.PinnedSectionListView
+        android:id="@+id/lv_chat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/chat_and_emos_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:dividerHeight="2dp" />
+    <!-- android:stackFromBottom="true" -->
+
+    <LinearLayout
+        android:id="@+id/footer_for_emoticons"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/keyboard_height"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+</RelativeLayout>

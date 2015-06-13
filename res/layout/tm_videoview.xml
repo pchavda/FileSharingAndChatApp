@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:id="@+id/ll_TMloadvideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/transparent"
+         >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+               <VideoView
+        android:id="@+id/video_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="top"
+                    android:background="#33cccccc"
+                   
+                    android:orientation="horizontal"
+                    android:padding="0dp" >
+                    
+
+                    <ImageView
+                        android:id="@+id/vimageTMView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="5dp"
+                        android:src="@drawable/user_old" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imageView1"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/vtxtTMUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/vtxtTMUserPhoNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:paddingTop="5dp"
+                            android:text="name2" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/vtxtTMFramDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/textView1"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="5dp"
+                        android:text="date" />
+                </RelativeLayout>
+            </FrameLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    
+
+</LinearLayout>

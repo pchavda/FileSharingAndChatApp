@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_add_status"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_add_status"/>
+    <!-- <item -->
+    <!-- android:id="@+id/action_edit" -->
+    <!-- android:orderInCategory="100" -->
+    <!-- android:showAsAction="always" -->
+    <!-- android:title="@string/action_edit"/> -->
+
+</menu>
